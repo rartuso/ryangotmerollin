@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Albright's Automobiles</title>
+    <meta name="description" content="Your source for pre-owned automobiles.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            overflow-x: hidden;
+            font-size: 16px;
+            transition: background-color 0.5s ease, color 0.5s ease;
+            padding-top: 260px;
+            color: #ffffff;
+            background-color: #17458f;
+        }
+        header {
+            background-color: rgba(23, 69, 143, 0.9);
+            border-bottom: 4px solid #ff7600;
+            color: #ffffff;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+        .header-logo-banner {
+            width: 100%;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px #000000;
+            transition: background-image 0.5s ease;
+        }
+        .header-logo-banner h1 {
+            margin: 0;
+            padding: 0;
+        }
+        #controls-bar {
+            background-color: rgba(23, 69, 143, 0.9);
+            padding: 8px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #ff7600;
+            flex-wrap: wrap;
+            gap: 10px;
+            position: fixed;
+            width: 100%;
+            top: 154px;
+            left: 0;
+            z-index: 100;
+        }
+        #controls-bar a {
+            font-size: 0.85em;
+            padding: 4px 12px;
+            text-decoration: none;
+            text-transform: uppercase;
+            white-space: nowrap;
+            cursor: pointer;
+            border-radius: 4px;
+            border: 1px solid #ff7600;
+            background-color: #0079A7;
+            color: #ffffff;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            display: inline-block;
+        }
+        #controls-bar a:hover {
+            background-color: #ff7600;
+            color: #ffffff;
+        }
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .featured-banner {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+        .featured-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 2px solid #ff7600;
+            box-shadow: 0 0 10px rgba(255,118,0,0.6);
+        }
+        section {
+            background: linear-gradient(rgba(23, 69, 143, 0.7), rgba(23, 69, 143, 0.7)), url('purpmarb.png') center center / cover no-repeat;
+            border: 1px solid #ff7600;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+            color: #ffffff;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-sizing: border-box;
+        }
+        section h2 {
+            color: #ff7600;
+            border-bottom: 2px solid #ff7600;
+            padding-bottom: 8px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        p {
+            color: #eee;
+            margin-bottom: 15px;
+        }
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .about-video, .about-text {
+            flex: 1 1 45%;
+        }
+        .about-video {
+            position: relative;
+            padding-bottom: 25%;
+            height: 0;
+            overflow: hidden;
+            background-color: #000;
+            border: 2px solid #ff7600;
+            box-shadow: 0 0 10px rgba(255,118,0,0.6);
+        }
+        .about-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .testimonial-profile {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: rgba(23, 69, 143, 0.9);
+            border-left: 4px solid #ff7600;
+            box-sizing: border-box;
+        }
+        .testimonial-profile img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 2px solid #ff7600;
+        }
+        .testimonial-profile h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #ff7600;
+            font-size: 1.6em;
+            border-bottom: none;
+        }
+        .testimonial-profile p {
+            color: #eee;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background-color: rgba(23, 69, 143, 0.9);
+            color: #a1887f;
+            font-size: 0.85em;
+            border-top: 1px solid #ff7600;
+        }
+        .lead-form-button {
+            font-size: 0.85em;
+            padding: 4px 12px;
+            text-decoration: none;
+            text-transform: uppercase;
+            white-space: nowrap;
+            cursor: pointer;
+            border-radius: 4px;
+            border: 1px solid #ff7600;
+            background-color: #0079A7;
+            color: #ffffff;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            display: inline-block;
+        }
+        .lead-form-button:hover {
+            background-color: #ff7600;
+            color: #ffffff;
+        }
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        #back-to-top img {
+            width: 40px;
+            height: auto;
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+            .about-video, .about-text {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-logo-banner" style="background-image: url('');">
+             <h1>Your Business Logo/Name Here</h1>
+        </div>
+    </header>
+
+    <div id="controls-bar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#apply">Apply</a>
+    </div>
+
+    <main>
+        <div class="featured-banner">
+            <img src="https://via.placeholder.com/1100x400" alt="Featured Sale Banner">
+        </div>
+        <section id="home">
+            <h2>Welcome to My Auto Sales</h2>
+            <p>Welcome to our curated collection of quality pre-owned vehicles. We specialize in finding unique cars and ensuring they are ready for their next owner. Our mission is to provide a seamless and trustworthy buying experience, so you can drive away happy and confident.</p>
+        </section>
+
+        <section id="about">
+            <h2>Our Process & Mission</h2>
+            <div class="about-content">
+                <div class="about-video">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="about-text">
+                    <p>We believe in a transparent and personal approach to car sales. Our process begins with a careful selection of vehicles, followed by a detailed inspection to ensure they meet our high standards. Once a car is in our inventory, we prepare it for sale, addressing any mechanical or cosmetic needs. Our mission is to connect great cars with great people, building trust one sale at a time.</p>
+                    <p>Feel free to add more details about your mission, values, or process here. This space is designed for additional text that complements the video and helps tell your story.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <h2>Testimonials from Our Clients</h2>
+            <p>Don't just take our word for it—see what our satisfied customers have to say about their experience.</p>
+            <p>To add a testimonial, simply use the `testimonial-profile` div and the `img` and `p` tags provided. You'll need to upload the testimonial image and paste the URL in the `src` attribute of the `img` tag.</p>
+
+            <div class="testimonial-profile">
+                <img src="https://via.placeholder.com/600x400" alt="Placeholder Testimonial Image">
+                <h3>Happy Customer Name - Vehicle Model</h3>
+                <p>“This is where you'll paste the testimonial text from your happy customer. You can include details about their positive experience, the quality of the car, and the great service they received.”</p>
+            </div>
+            <div class="testimonial-profile">
+                <img src="https://via.placeholder.com/600x400" alt="Placeholder Testimonial Image">
+                <h3>Another Happy Customer - Vehicle Model</h3>
+                <p>“We're dedicated to making the car-buying process a joy, not a chore. This space is perfect for showcasing another satisfied client and their story.”</p>
+            </div>
+        </section>
+
+        <section id="apply">
+            <h2>Ready to Find Your Car?</h2>
+            <p>If you're interested in learning more or would like to apply for a vehicle, please click the button below to be taken to our lead form. We look forward to working with you!</p>
+            <p><a href="" target="_blank" class="lead-form-button">Go to Lead Form</a></p>
+        </section>
+    </main>
+
+    <a href="#" id="back-to-top" title="Back to top">
+        <img src="backtotop.png" alt="Back to top">
+    </a>
+
+    <footer>
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> Mr. Albright's Automobiles.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const backToTopButton = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 100) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+            backToTopButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
