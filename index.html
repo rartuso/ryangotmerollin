@@ -128,16 +128,20 @@
         }
         .about-video {
             position: relative;
-            height: 250px;
+            padding-bottom: 56.25%; /* Maintains a 16:9 aspect ratio */
+            height: 0;
             overflow: hidden;
             background-color: #000;
             border: 2px solid #ff7600;
             box-shadow: 0 0 10px rgba(255,118,0,0.6);
         }
         .about-video video {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
         .testimonial-profile {
             margin-bottom: 30px;
@@ -230,9 +234,6 @@
     </div>
 
     <main>
-        <div class="featured-banner">
-            <img src="https://via.placeholder.com/1100x400" alt="Featured Sale Banner">
-        </div>
         <section id="about">
             <h2>Our Process & Mission</h2>
             <div class="about-content">
