@@ -128,20 +128,16 @@
         }
         .about-video {
             position: relative;
-            padding-bottom: 25%;
-            height: 0;
+            height: 250px;
             overflow: hidden;
             background-color: #000;
             border: 2px solid #ff7600;
             box-shadow: 0 0 10px rgba(255,118,0,0.6);
         }
-        .about-video iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .about-video video {
             width: 100%;
             height: 100%;
-            border: none;
+            object-fit: cover;
         }
         .testimonial-profile {
             margin-bottom: 30px;
@@ -241,7 +237,7 @@
             <h2>Our Process & Mission</h2>
             <div class="about-content">
                 <div class="about-video">
-                    <video width="100%" height="100%" autoplay loop controls>
+                    <video width="100%" height="100%" autoplay loop controls muted>
                         <source src="https://ryangotmerollin.com/unbrandedad1.mov" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
