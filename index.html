@@ -15,7 +15,7 @@
             overflow-x: hidden;
             font-size: 16px;
             transition: background-color 0.5s ease, color 0.5s ease;
-            padding-top: 200px;
+            padding-top: 165px;
             color: #ffffff;
             background-color: #213041;
         }
@@ -32,7 +32,7 @@
         }
         .header-logo-banner {
             width: 100%;
-            height: 150px;
+            height: 120px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -54,7 +54,7 @@
             gap: 10px;
             position: fixed;
             width: 100%;
-            top: 154px;
+            top: 124px;
             left: 0;
             z-index: 100;
         }
@@ -128,7 +128,7 @@
         }
         .about-video {
             position: relative;
-            padding-bottom: 56.25%; /* Maintains a 16:9 aspect ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             background-color: #000;
@@ -143,12 +143,18 @@
             height: 100%;
             object-fit: contain;
         }
+        .testimonial-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
         .testimonial-profile {
             margin-bottom: 30px;
             padding: 20px;
             background-color: rgba(33, 48, 65, 0.9);
             border-left: 4px solid #ff7600;
             box-sizing: border-box;
+            flex: 1 1 45%;
         }
         .testimonial-profile img {
             max-width: 100%;
@@ -218,12 +224,18 @@
             .about-video, .about-text {
                 flex: 1 1 100%;
             }
+            .testimonial-grid {
+                flex-direction: column;
+            }
+            .testimonial-profile {
+                flex-basis: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-logo-banner" style="background-image: url('https://ryangotmerollin.com/images/logo1.png');">
+        <div class="header-logo-banner" style="background-image: url('https://scontent.fosu2-1.fna.fbcdn.net/v/t39.30808-6/555970420_122102186547036044_7402822589632361525_n.png?_nc_cat=102&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=B9sjP-TrE8sQ7kNvwE-18xm&_nc_oc=AdlheEjnDMOTOYSkzD753a_qH2qLdr5FTVvojNdIkzOJeVJIbmB8Kn2l4LQrIUFCv3eYFZ4VTQdaaaE7wV2lYYoa&_nc_zt=23&_nc_ht=scontent.fosu2-1.fna&_nc_gid=_nbwZwmPDLN0H-hUDCLmqQ&oh=00_AfZe9Nac3fb6mqQuh_1VJNu8D3vYftS3jeyFk4seeiNbpQ&oe=68DCA0C8');">
         </div>
     </header>
 
@@ -234,6 +246,9 @@
     </div>
 
     <main>
+        <div class="featured-banner">
+            <img src="https://via.placeholder.com/1100x400" alt="Featured Sale Banner">
+        </div>
         <section id="about">
             <h2>Our Process & Mission</h2>
             <div class="about-content">
@@ -250,16 +265,20 @@
         </section>
 
         <section id="testimonials">
-            <h2>Testimonials</h2>
+            <h2>Testimonials from Our Clients</h2>
             <p>Don't just take our word for it—see what our satisfied customers have to say about their experience.</p>
-
-            <div class="testimonial-profile">
-                <img src="https://ryangotmerollin.com/images/testimonial1.png" alt="Placeholder Testimonial Image">
-            </div>
-            
-            <div class="testimonial-profile">
-                <img src="https://ryangotmerollin.com/images/Testimonial2.png" alt="Placeholder Testimonial Image">
-                
+            <p>To add a testimonial, simply use the `testimonial-profile` div and the `img` and `p` tags provided. You'll need to upload the testimonial image and paste the URL in the `src` attribute of the `img` tag.</p>
+            <div class="testimonial-grid">
+                <div class="testimonial-profile">
+                    <img src="https://via.placeholder.com/600x400" alt="Placeholder Testimonial Image">
+                    <h3>Happy Customer Name - Vehicle Model</h3>
+                    <p>“This is where you'll paste the testimonial text from your happy customer. You can include details about their positive experience, the quality of the car, and the great service they received.”</p>
+                </div>
+                <div class="testimonial-profile">
+                    <img src="https://via.placeholder.com/600x400" alt="Placeholder Testimonial Image">
+                    <h3>Another Happy Customer - Vehicle Model</h3>
+                    <p>“We're dedicated to making the car-buying process a joy, not a chore. This space is perfect for showcasing another satisfied client and their story.”</p>
+                </div>
             </div>
         </section>
 
